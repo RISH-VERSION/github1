@@ -59,14 +59,21 @@ img{
     width: 100px;
     height: 100px;
     animation-name: spin;
-    animation-duration: 3s;
+    animation-duration: 4.5s;
+    /* animation-timing-function: ease; */
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
 }
 @keyframes spin {
     0%{
-       
+       transform: translate(0%,1000%);
+    }
+    35%{
+        scale:1.5;
+        transform: rotate(0deg);
     }
     50%{
-        scale: 2;
+        scale: 2.5;
         transform: rotate(0deg);
     }
     100%{
