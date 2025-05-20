@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degree Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* @font-face {
+            font-family: 'Digital7';
+            src: url('digital_7/digital-7.ttf') format('truetype');
+        } */
+        .container {
+            height:500px;
+            width: 500px;
+            background-color: rgba(255, 255, 255, 0.027);
+            backdrop-filter: blur(5px);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% ,-50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.795);
+        }
+        #curr {
+             border-style: none;
+             background-color: rgba(255, 255, 255, 0.103);
+             color: white;       
+             font-size: 2em;
+             font-weight: 500;
+        }
+        .btn{
+            color:white;
+            background-color: black;
+            padding:7px;
+            border-radius: 20%;
+            margin:10px;
+        }
+        .btn:active{
+            transform:translate(5%,10%);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ol>
+                <li><a href="/Tasks/index.html">Home</a></li>
+                <li><a href="/Tasks/task1.html">Task1</a></li>
+                <li><a href="/Tasks/task2.html">Task2</a></li>
+                <li><a href="/Tasks/task4.html">Task4</a></li>
+            </ol>
+        </nav>
+    </header>
+
+    
+    <div class="container">
+        <h1 style="margin-top:20px; font-size: 3em;">Degree Conversion</h1>
+        <label for="curr" style="font-size: 1.5em;"><strong>Fahrenheit :</strong></label>
+        <input type="number" id="curr">
+        <button onclick="calc()">Convert</button>
+        <h1 style="margin-bottom: 40px; font-size: 3em;">Celsius: <span id="res"></span></h1>
+    </div>
+
+    <script>
+        function calc() {
+            var curr = parseInt(document.getElementById("curr").value);
+            var celsius = (curr - 32) * 5 / 9;
+            document.getElementById("res").innerText = celsius.toFixed(2)+"°C";
+        }
+    </script>
+</body>
+</html>

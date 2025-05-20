@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @font-face {
+            font-family: 'Digital7';
+            src: url('digital_7/digital-7.ttf') format('truetype');
+        }
+        .container{
+            width: 500px;
+            height: 500px;
+            background-color: rgba(255, 255, 255, 0.027);
+            backdrop-filter: blur(5px);
+            border: 0px 0px 100px rgba(255, 255, 255, 0);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            color: rgba(255, 255, 255, 0.795);
+        }
+        #time{
+            font-family: 'Digital7';
+            font-size: 5em;
+            text-align: center;
+            color: rgb(236, 236, 236);
+        }
+        .btns {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 100px;
+        }
+        .btns button {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ol>
+                <li><a href="/Tasks/index.html">Home</a></li>
+                <li><a href="/Tasks/task1.html">Task1</a></li>
+                <li><a href="/Tasks/task3.html">Task3</a></li>
+                <li><a href="/Tasks/task4.html">Task4</a></li>
+            </ol>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="box">
+            <h1 id="myh1" style="margin-bottom: 90px; font-size: 3em;">STOP WATCH</h1>
+            <h1 id="time" style="font-size: 8em;">0</h1>
+        </div>
+        <div class="btns">
+            <button onclick="start()">START</button>
+            <button onclick="stop()">STOP</button>
+            <button onclick="reset()">RESET</button>
+        </div>
+    </div>
+
+    <script>
+        var curr = 0;
+        var time = document.getElementById("time");
+        var interval = null;
+
+        function start() {
+            interval = setInterval(() => {
+                curr = curr + 1;
+                time.innerText = parseInt(curr);
+            }, 1000);
+        }
+
+        function stop() {
+            clearInterval(interval);
+        }
+
+        function reset() {
+            curr = 0;
+            time.innerText = parseInt(curr);
+            clearInterval(interval);
+        }
+    </script>
+</body>
+</html>

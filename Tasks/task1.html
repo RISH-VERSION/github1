@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Two Numbers</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+            height:500px;
+            width: 500px;
+            background-color: rgba(255, 255, 255, 0.027);
+            backdrop-filter: blur(5px);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% ,-50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.795);
+        }
+        .inp{
+            background-color: rgba(179, 178, 178, 0.219);
+            border-style: none;
+            font-size: 1.5em;
+            border-radius: 10px;
+            color: white;
+        }
+        .inp :active{
+            border-style: none;
+        }
+        .container button{
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ol>
+            <li><a href="/Tasks/index.html">Home</a></li>
+            <li><a href="/Tasks/task2.html">Task2</a></li>
+            <li><a href="/Tasks/task3.html">Task3</a></li>
+            <li><a href="/Tasks/task4.html">Task4</a></li>
+            </ol>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 style="margin-top:20px; font-size: 3em;">Add Two Numbers</h1>
+        <form>
+            <div class="box">
+                <label for="num1" style="font-size: 1.5em;"><Strong>Number2</Strong></label>
+                <input type="number" class="inp" id="num1"><br>
+                <label for="num2" style="font-size: 1.5em;"><Strong>Number2</Strong></label>
+                <input type="numebr" class="inp" style="margin-top: 20px;" id="num2">
+            </div> 
+        </form>   
+        <button onclick="add()">ADD</button>
+        <h1 style="margin-bottom: 40px;" id="res">RESULT : </h1>
+    </div> 
+
+    <script>
+        function add() {
+            var num1 = document.getElementById("num1");
+            var num2 = document.getElementById("num2");
+            var res = document.getElementById("res");
+            var tot = parseInt(num1.value) + parseInt(num2.value);
+            res.innerText = `RESULT : ${tot}`;
+        }
+    </script>
+</body>
+</html>
